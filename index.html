@@ -2,7 +2,8 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>💖 Sevgililer Günü Planı 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 Sevgililer Günü Daveti 💖</title>
 
 <style>
 body {
@@ -17,21 +18,18 @@ body {
 }
 
 .card {
+  width: 92%;
+  max-width: 420px;
   background: white;
-  padding: 30px;
+  padding: 24px;
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  width: 92%;
-  max-width: 420px;
-  padding: 24px;
-}
-
 }
 
 .card img {
   width: 100%;
-  max-height: 240px;
+  max-height: 220px;
   object-fit: cover;
   border-radius: 15px;
   margin-bottom: 20px;
@@ -39,10 +37,12 @@ body {
 
 h1 {
   color: #e91e63;
+  margin-bottom: 10px;
 }
 
 p {
-  font-size: 18px;
+  font-size: 17px;
+  line-height: 1.5;
 }
 
 .buttons {
@@ -50,8 +50,8 @@ p {
 }
 
 button {
-  font-size: 18px;
-  padding: 15px 25px;
+  font-size: 17px;
+  padding: 14px 22px;
   border-radius: 12px;
   border: none;
   cursor: pointer;
@@ -67,7 +67,7 @@ button {
   background: #ccc;
   position: absolute;
 }
-
+  
 .details {
   max-height: 0;
   opacity: 0;
@@ -77,7 +77,7 @@ button {
   border-radius: 15px;
   background: #ffe6ea;
   transform: scale(0.95);
-  transition: 
+  transition:
     max-height 1.2s ease,
     opacity 1s ease,
     transform 1s ease,
@@ -91,11 +91,7 @@ button {
   transform: scale(1);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* 💕 Kalpler */
 .heart {
   position: absolute;
   font-size: 24px;
@@ -106,6 +102,12 @@ button {
   from { transform: translateY(0); opacity: 1; }
   to { transform: translateY(-150px); opacity: 0; }
 }
+
+@media (max-width: 480px) {
+  h1 { font-size: 22px; }
+  p { font-size: 16px; }
+  button { font-size: 16px; }
+}
 </style>
 </head>
 
@@ -115,64 +117,64 @@ button {
   <img src="foto.jpg" alt="Biz">
 
   <h1>💌 Güzelim 💌</h1>
+
   <p>
     Bu sayfa sadece senin için…<br><br>
-    Sevgililer gününde benimle birlikte olmak ister misin ?
+    Sevgililer Gününde benimle birlikte olmak ister misin ?
   </p>
 
   <div class="buttons">
-    <button id="yes">Evettt 💖</button>
+    <button id="yes">Evett 💖</button>
     <button id="no">Hayır 🙈</button>
   </div>
 
   <div class="details" id="details">
-    <h2>✨ O zaman planımız şu şekilde ✨</h2>
+    <h2>✨ O zaman plan belli ✨</h2>
     <p>
-      📍 <strong>Mekan:</strong> Vesperna restoranında güzel bir akşam yemeği<br>
-      ⏰ <strong>Saat:</strong> 20:00'da
+      📍 <strong>Mekan:</strong> VESPERNA RESTORANT<br>
+      ⏰ <strong>Saat:</strong> 19:00
     </p>
-    <p>O gün seninle birlikte olacağım için çok heyecanlıyım 💕</p>
+    <p>DAHA NİCE SEVGİLİLER GÜNÜMÜZ OLSUN 💕</p>
   </div>
 </div>
 
 <audio id="music" src="sarkimiz.mp3"></audio>
 
 <script>
-  const noBtn = document.getElementById("no");
-  const yesBtn = document.getElementById("yes");
-  const music = document.getElementById("music");
-  const details = document.getElementById("details");
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const music = document.getElementById("music");
+const details = document.getElementById("details");
 
-  noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
-  });
 
-  yesBtn.addEventListener("click", () => {
-    music.play();
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 50);
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
 
-    setTimeout(() => {
-      details.classList.add("show");
-    }, 600);
 
-    for (let i = 0; i < 30; i++) {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerHTML = "💖";
-      heart.style.left = Math.random() * window.innerWidth + "px";
-      heart.style.top = window.innerHeight + "px";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 3000);
-    }
+yesBtn.addEventListener("click", () => {
+  music.play();
 
-    alert("Hazırlan… bu akşam özel ✨");
-  });
+  setTimeout(() => {
+    details.classList.add("show");
+  }, 600);
+
+  for (let i = 0; i < 30; i++) {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = window.innerHeight + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 3000);
+  }
+
+  alert("O günü seninle geçireceğim için çok heyecanlıyım ✨");
+});
 </script>
-
 
 </body>
 </html>
-
-
