@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>💖 Sevgililer Günü Planı 💖</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffb6c1, #ffe6ea);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-width: 90%;
+}
+
+.card img {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #e91e63;
+}
+
+p {
+  font-size: 18px;
+}
+
+.buttons {
+  margin-top: 25px;
+}
+
+button {
+  font-size: 18px;
+  padding: 15px 25px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#yes {
+  background: #e91e63;
+  color: white;
+}
+
+#no {
+  background: #ccc;
+  position: absolute;
+}
+
+.details {
+  display: none;
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 15px;
+  background: #ffe6ea;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heart {
+  position: absolute;
+  font-size: 24px;
+  animation: float 3s linear forwards;
+}
+
+@keyframes float {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-150px); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <img src="foto.jpg" alt="Biz">
+
+  <h1>💌 Güzelim 💌</h1>
+  <p>
+    Bu sayfa sadece senin için…<br><br>
+    Sevgililer gününde benimle birlikte olmak ister misin ?
+  </p>
+
+  <div class="buttons">
+    <button id="yes">Evettt 💖</button>
+    <button id="no">Hayır 🙈</button>
+  </div>
+
+  <div class="details" id="details">
+    <h2>✨ O zaman planımız şu şekilde ✨</h2>
+    <p>
+      📍 <strong>Mekan:</strong> Vesperna restoranında güzel bir akşam yemeği<br>
+      ⏰ <strong>Saat:</strong> 20:00'da
+    </p>
+    <p>O gün seninle birlikte olacağım için çok heyecanlıyım 💕</p>
+  </div>
+</div>
+
+<audio id="music" src="sarkimiz.mp3"></audio>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const music = document.getElementById("music");
+const details = document.getElementById("details");
+
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 50);
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+
+yesBtn.addEventListener("click", () => {
+  music.play();
+  details.style.display = "block";
+
+  for(let i = 0; i < 30; i++) {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = window.innerHeight + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 3000);
+  }
+
+  alert("Harika bir gün bizi bekliyor. Daha nice Sevgililer günümüz olsun <3");
+});
+</script>
+
+</body>
+</html>
