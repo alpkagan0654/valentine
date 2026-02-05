@@ -22,7 +22,11 @@ body {
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  max-width: 90%;
+  width: 92%;
+  max-width: 420px;
+  padding: 24px;
+}
+
 }
 
 .card img {
@@ -145,10 +149,29 @@ yesBtn.addEventListener("click", () => {
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 3000);
   }
+@media (max-width: 480px) {
+  h1 {
+    font-size: 22px;
+  }
 
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .card img {
+    max-height: 200px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+}
   alert("Harika bir gün bizi bekliyor. Daha nice Sevgililer günümüz olsun <3");
 });
 </script>
 
 </body>
 </html>
+
