@@ -67,7 +67,8 @@ button {
   background: #ccc;
   position: absolute;
 }
-  
+
+/* 🎬 Dramatik açılan detaylar */
 .details {
   max-height: 0;
   opacity: 0;
@@ -103,6 +104,7 @@ button {
   to { transform: translateY(-150px); opacity: 0; }
 }
 
+/* 📱 Mobil ince ayar */
 @media (max-width: 480px) {
   h1 { font-size: 22px; }
   p { font-size: 16px; }
@@ -120,7 +122,7 @@ button {
 
   <p>
     Bu sayfa sadece senin için…<br><br>
-    Sevgililer Gününde benimle birlikte olmak ister misin ?
+    Sevgililer Gününde benimle birlikte yemeğe gelir misin ?
   </p>
 
   <div class="buttons">
@@ -131,10 +133,10 @@ button {
   <div class="details" id="details">
     <h2>✨ O zaman plan belli ✨</h2>
     <p>
-      📍 <strong>Mekan:</strong> VESPERNA RESTORANT<br>
+      📍 <strong>Mekan:</strong> VESPERNA RESTORAN <br>
       ⏰ <strong>Saat:</strong> 19:00
     </p>
-    <p>DAHA NİCE SEVGİLİLER GÜNÜMÜZ OLSUN 💕</p>
+    <p>SENİ ÇOK SEVİYORUM GÜZEL SEVGİLİM 💕</p>
   </div>
 </div>
 
@@ -146,7 +148,7 @@ const yesBtn = document.getElementById("yes");
 const music = document.getElementById("music");
 const details = document.getElementById("details");
 
-
+/* 😈 Kaçan hayır */
 noBtn.addEventListener("mouseover", () => {
   const x = Math.random() * (window.innerWidth - 100);
   const y = Math.random() * (window.innerHeight - 50);
@@ -154,7 +156,7 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.top = y + "px";
 });
 
-
+/* 💖 Evet tıklanınca */
 yesBtn.addEventListener("click", () => {
   music.play();
 
@@ -172,7 +174,7 @@ yesBtn.addEventListener("click", () => {
     setTimeout(() => heart.remove(), 3000);
   }
 
-  alert("O günü seninle geçireceğim için çok heyecanlıyım ✨");
+  alert("DAHA NİCE SEVGİLİLER GÜNÜMÜZ OLSUN✨");
 });
 </script>
 
